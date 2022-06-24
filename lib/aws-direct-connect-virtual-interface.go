@@ -49,7 +49,7 @@ func (p AwsDxVifPlugin) GraphDefinition() map[string]mp.Graphs {
 	return map[string]mp.Graphs{
 		"Bps": {
 			Label: labelPrefix + " bps",
-			Unit:  mp.UnitInteger,
+			Unit:  mp.UnitBitsPerSecond,
 			Metrics: []mp.Metrics{
 				// The bitrate for outbound data from the AWS side of the virtual interface.
 				{Name: "VirtualInterfaceBpsEgress", Label: "bps out"},
