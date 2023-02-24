@@ -21,5 +21,5 @@ require (
 	github.com/aws/smithy-go v1.11.3 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/mackerelio/golib v1.2.1 // indirect
-	golang.org/x/text v0.3.7 // indirect
+	golang.org/x/text v0.3.8 // indirect
 )
