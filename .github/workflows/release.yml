@@ -21,6 +21,7 @@ jobs:
       - name: release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CGO_ENABLED: 0
         run: |
           go install github.com/Songmu/goxz/cmd/goxz@latest
           go install github.com/tcnksm/ghr@latest
