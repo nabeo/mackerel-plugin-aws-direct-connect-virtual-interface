@@ -17,6 +17,8 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/cloudwatch/types"
 	"github.com/aws/aws-sdk-go-v2/service/sts"
 	mp "github.com/mackerelio/go-mackerel-plugin"
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 )
 
 // AwsDxVifPlugin struct
@@ -42,8 +44,8 @@ type metrics struct {
 
 // GraphDefinition : return graph definition
 func (p AwsDxVifPlugin) GraphDefinition() map[string]mp.Graphs {
-	labelPrefix := strings.Title(p.Prefix)
-	labelPrefix = strings.Replace(labelPrefix, "-", " ", -1)
+	labelPrefix := cases.Title(language.Und, cases.NoLower).String(p.Prefix)
+	labelPrefix = strings.ReplaceAll(labelPrefix, "-", " ")
 
 	// https://docs.aws.amazon.com/directconnect/latest/UserGuide/monitoring-cloudwatch.html#viewing-metrics
 	return map[string]mp.Graphs{
